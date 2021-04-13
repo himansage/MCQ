@@ -1,10 +1,10 @@
 import React from 'react';
 import './styles.css';
-import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import {editSelectedQuestionDetails} from "../../../../actions/question";
+import {connect} from "react-redux";
 
 const QuestionForm = ({editable, questionFormDetail, editQuestionDetail}) => {
-
     return (
         <Form>
             <Form.Group>
@@ -31,4 +31,13 @@ const QuestionForm = ({editable, questionFormDetail, editQuestionDetail}) => {
     )
 }
 
-export default QuestionForm;
+const mapStateToProps = (state) => ({
+    editable: state.question.isEditable,
+    questionFormDetail: state.question.selectedQuestion
+})
+
+const mapDispatchToProps = {
+    editQuestionDetail: editSelectedQuestionDetails
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionForm);

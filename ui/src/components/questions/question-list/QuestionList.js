@@ -2,13 +2,16 @@ import React from 'react';
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from 'react-bootstrap/Container';
 import Button from "react-bootstrap/Button";
+import {connect} from "react-redux";
+import {addNewQuestionToList} from '../../../actions/questionList';
+import {updateSelectedQuestion} from "../../../actions/question";
 
-const QuestionList = ({questionList, selectedQuestionId, setSelectedQuestionId, addQuestion}) => {
+const QuestionList = ({questionList, selectedQuestionId, updateSelectedQuestion, addNewQuestionToList}) => {
     return (
         <Container className='py-3 shadow-lg rounded'>
             <div className='d-flex justify-content-between mb-3'>
                 <span className='h3'>Questions:</span>
-                <Button variant="primary" disabled={selectedQuestionId==-1} onClick={()=>addQuestion()}>
+                <Button variant="primary" disabled={selectedQuestionId===-1} onClick={()=>addNewQuestionToList()}>
                     Add
                 </Button>
             </div>
@@ -16,9 +19,9 @@ const QuestionList = ({questionList, selectedQuestionId, setSelectedQuestionId, 
                 {questionList.map(question=>(
                     <ListGroup.Item
                         action as='button'
-                        key={question.id}
-                        active={question.id===selectedQuestionId}
-                        onClick={()=>setSelectedQuestionId(question.id)}>
+                        key={question._id}
+                        active={question._id===selectedQuestionId}
+                        onClick={()=>updateSelectedQuestion(question._id)}>
                         {question.title}
                     </ListGroup.Item>
                 ))}
@@ -27,4 +30,14 @@ const QuestionList = ({questionList, selectedQuestionId, setSelectedQuestionId, 
     )
 }
 
-export default  QuestionList;
+const mapStateToProps = (state) => ({
+    questionList: state.questionList,
+    selectedQuestionId: state.question.selectedQuestion._id,
+})
+
+const mapDispatchToProps = {
+    addNewQuestionToList,
+    updateSelectedQuestion
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(QuestionList);
