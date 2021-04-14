@@ -4,7 +4,7 @@ const app = require('../../../src/app');
 const chai = require('chai');
 const expect = chai.expect;
 
-describe('GET /questions', function () {
+describe('GET /api/questions', function () {
     before(() => {
         return db.connect()
     });
@@ -13,7 +13,7 @@ describe('GET /questions', function () {
     })
     it('should get list of questions', function () {
         return supertest(app)
-            .get('/questions')
+            .get('/api/questions')
             .expect(200)
             .then((response) => {
                 // Check the response type
@@ -22,7 +22,7 @@ describe('GET /questions', function () {
     })
 });
 
-describe('GET /questions/byTitle/:title', function () {
+describe('GET /api/questions/byTitle/:title', function () {
     before(() => {
         return db.connect()
     });
@@ -32,7 +32,7 @@ describe('GET /questions/byTitle/:title', function () {
     describe('with invalid title', () => {
         it('should respond with 404', () => {
             return supertest(app)
-                .get('/questions/byTitle/Sample')
+                .get('/api/questions/byTitle/Sample')
                 .expect(404);
         });
     });

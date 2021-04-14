@@ -1,7 +1,9 @@
 import React from 'react';
+// Bootstrap imports
 import ListGroup from "react-bootstrap/ListGroup";
 import Container from 'react-bootstrap/Container';
 import Button from "react-bootstrap/Button";
+// Redux imports
 import {connect} from "react-redux";
 import {addNewQuestionToList} from '../../../actions/questionList';
 import {updateSelectedQuestion} from "../../../actions/question";

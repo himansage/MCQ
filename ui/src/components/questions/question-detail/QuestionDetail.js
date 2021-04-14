@@ -1,10 +1,13 @@
-import React, {Fragment, useEffect, useState} from 'react';
+import React, {Fragment} from 'react';
+// Bootstrap imports
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+// Component imports
 import ChoiceList from "./choice-list/ChoiceList";
 import QuestionForm from "./question-form/QuestionForm";
-import {Button, Form} from "react-bootstrap";
+// Redux imports
 import {refreshQuestionList} from "../../../actions/questionList";
 import {connect} from "react-redux";
 import {toggleEditable, saveQuestionChanges, deleteQuestion} from '../../../actions/question';

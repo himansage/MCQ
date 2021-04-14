@@ -2,7 +2,7 @@ import {ADD_NEW_QUESTION, REFRESH_QUESTION_LIST} from '../actions/types'
 
 const initialState = [];
 
-export default (state=initialState, action) => {
+const questionListReducer =  (state=initialState, action) => {
     switch (action.type) {
         case REFRESH_QUESTION_LIST:
             return action.payload;
@@ -16,3 +16,5 @@ export default (state=initialState, action) => {
             return [...state]
     }
 }
+
+export default questionListReducer;

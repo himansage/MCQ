@@ -1,6 +1,8 @@
 import React from 'react';
 import './styles.css';
+// Bootstrap imports
 import Form from "react-bootstrap/Form";
+// Redux imports
 import {editSelectedQuestionDetails} from "../../../../actions/question";
 import {connect} from "react-redux";
 

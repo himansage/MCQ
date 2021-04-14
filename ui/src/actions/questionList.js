@@ -25,7 +25,7 @@ export const addNewQuestionToList = () => (dispatch) => {
     dispatch({
         type: ADD_NEW_QUESTION,
         payload: {
-            title: 'Enter new question',
+            title: 'Enter new question title...',
             _id: -1
         }
     })

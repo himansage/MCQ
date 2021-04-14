@@ -9,18 +9,18 @@ import {
 const initialState = {
     selectedQuestion: {
         _id: -1,
-        title: 'Enter question title',
-        description: 'Enter question description',
+        title: 'Enter new question title...',
+        description: 'Enter new question description...',
         choices: [
-            {_id:1, text: 'Enter choice 1', isCorrect: true},
-            {_id:2, text: 'Enter choice 2', isCorrect: false},
-            {_id:3, text: 'Enter choice 3', isCorrect: false}
+            {_id:1, text: 'Enter choice 1 text...', isCorrect: true},
+            {_id:2, text: 'Enter choice 2 text...', isCorrect: false},
+            {_id:3, text: 'Enter choice 3 text...', isCorrect: false}
         ]
     },
     isEditable: true
 }
 
-export default (state=initialState, action) => {
+const questionReducer = (state=initialState, action) => {
     switch (action.type) {
         case UPDATE_SELECTED_QUESTION:
             return {
@@ -31,10 +31,6 @@ export default (state=initialState, action) => {
                 }
             }
         case RESET_SELECTED_QUESTION:
-            let newState = {...state};
-            if (state._id !== -1) {
-
-            }
             return state._id !== -1 ? {
                 ...initialState
             } : {
@@ -78,7 +74,7 @@ export default (state=initialState, action) => {
                     ...state.selectedQuestion,
                     choices: state.selectedQuestion.choices.map(choice=> ({
                         ...choice,
-                        isCorrect: choice._id == action.payload
+                        isCorrect: choice._id === action.payload
                     }))
                 }
             }
@@ -88,3 +84,5 @@ export default (state=initialState, action) => {
             }
     }
 }
+
+export default questionReducer;

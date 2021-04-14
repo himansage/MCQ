@@ -1,6 +1,8 @@
 import React from 'react';
+// Bootstrap imports
 import FormControl from "react-bootstrap/FormControl";
-import InputGroup from 'react-bootstrap/InputGroup'
+import InputGroup from 'react-bootstrap/InputGroup';
+// Redux imports
 import {setCorrectChoice, editChoiceText} from '../../../../actions/question';
 import {connect} from "react-redux";
 
