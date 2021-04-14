@@ -74,7 +74,7 @@ const questionReducer = (state=initialState, action) => {
                     ...state.selectedQuestion,
                     choices: state.selectedQuestion.choices.map(choice=> ({
                         ...choice,
-                        isCorrect: choice._id === action.payload
+                        isCorrect: ""+choice._id === action.payload
                     }))
                 }
             }
