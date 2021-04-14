@@ -3,14 +3,14 @@ A component to demonstrate the CRUD operations of Multiple Choice Question & Ans
 
 
 ## UI (React - Redux - Bootstrap)
-### Components/Blocks (./ui/src)
+#### Components/Blocks (./ui/src)
 1. ./components - Reusable React components
 2. ./actions - Action creators
 3. ./reducers - Reducers
 
 
 ## API (Node - Express - Mongoose) 
-### Components/Blocks (./api/)
+#### Components/Blocks (./api/)
 1. ./src/db - Models and DB setup (Data layer)
 2. ./src/routes - Routers (Routing/Controller layer)
 3. ./src/services - Services (Service/Application layer)
@@ -18,7 +18,7 @@ A component to demonstrate the CRUD operations of Multiple Choice Question & Ans
 5. ./test/services - Unit tests
 
 
-### Setup & running instruction
+## Setup & running instruction
 1. Clone the repo (git clone https://github.com/virtualhimanshu/MCQ.git)
 2. Update the database config (in ./api/config)
 3. Start the backend (cd ./api && npm start)
