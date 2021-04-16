@@ -14,7 +14,7 @@ A component to demonstrate the CRUD operations of Multiple Choice Question & Ans
 1. ./src/db - Models and DB setup (Data layer)
 2. ./src/routes - Routers (Routing/Controller layer)
 3. ./src/services - Services (Service/Application layer)
-4. ./test/api - API tests
+4. ./test/api - API tests _(Sample)_
 5. ./test/services - Unit tests
 
 
